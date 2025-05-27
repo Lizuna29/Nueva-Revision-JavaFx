@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import es.componente.ControladorComponente?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.recuperacionmiguel.programa.DemoController">
+    <ControladorComponente fx:id="componente1">
+
+    </ControladorComponente>
+
+    <TextField  fx:id="inputArea" layoutX="14.0" layoutY="120.0" prefHeight="20.0" prefWidth="449.0" />
+    <TextArea fx:id="outputArea" layoutX="14.0" layoutY="154.0" prefHeight="107.0" prefRowCount="5" prefWidth="449.0" />
+    <Button layoutX="223.0" layoutY="268.0" onAction="#handleSet" text="Set" />
+    <Button layoutX="418.0" layoutY="268.0" onAction="#handleReset" text="Reset" />
+
+    <Button layoutX="14.0" layoutY="268.0" onAction="#handleGet" text="Get" />
+</AnchorPane>
