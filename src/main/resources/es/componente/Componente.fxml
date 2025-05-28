@@ -2,14 +2,13 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <fx:root fx:id="raiz" prefHeight="100.0" prefWidth="300.0" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="29.0" prefWidth="600.0">
+      <HBox prefHeight="29.0" prefWidth="600.0" styleClass="hbox-centered">
          <children>
             <TextField fx:id="textField" prefHeight="39.0" prefWidth="237.0" />
-            <Button fx:id="button" mnemonicParsing="false" prefHeight="43.0" prefWidth="86.0" text="Add" />
+            <Button fx:id="button" mnemonicParsing="false" prefHeight="43.0" prefWidth="86.0" text="Set" />
          </children>
       </HBox>
       <FlowPane fx:id="flowPane" hgap="5" vgap="5" prefWrapLength="300" />

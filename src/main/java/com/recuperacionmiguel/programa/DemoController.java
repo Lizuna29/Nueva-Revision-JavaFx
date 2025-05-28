@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -29,6 +30,7 @@ public class DemoController extends Application {
     FXMLLoader AppLoader = new FXMLLoader(DemoController.class.getResource("hello-view.fxml"));
     Parent root = AppLoader.load();
     Scene scene = new Scene(root);
+    //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/es/componente/styles.css")).toExternalForm());
     stage.setTitle("Imagina que funciona y todo...");
     stage.setScene(scene);
     stage.show();
@@ -37,20 +39,16 @@ public class DemoController extends Application {
 
   @FXML
   public void handleGet() {
-    seleccion = componente1.getElementosSeleccionados();
-    outputArea.setText("Seleccionados:\n" + String.join(", ", seleccion));
+    seleccion = componente1.get();
+    outputArea.setText("Elementos:\n" + String.join(", ", seleccion));
   }
 
   public void handleSet() {
     String texto = inputArea.getText().trim();
-    if (texto.isEmpty()) return;
-
-    componente1.addBadge(texto);
-
-    // Limpio el campo de entrada y, si quieres, muestro resultado
-    inputArea.clear();
-    List<String> all = componente1.getElementosSeleccionados();
-    outputArea.setText("Seleccionados:\n" + String.join(", ", all));
+    if (!texto.isEmpty()) {
+      componente1.set(texto);
+      inputArea.clear();
+    };
   }
 
   @FXML
